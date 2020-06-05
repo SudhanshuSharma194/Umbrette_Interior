@@ -30,18 +30,18 @@ public class drawerOpen : MonoBehaviour
         coroutineAllowed = false;
         if (!boxOpened)
         {
-            for (float i = -0.00346f; i >= -0.00767f; i -= 0.001f)
+            for (float i = -0.366f; i >= -0.806f; i -= 0.1f)
             {
-                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - 0.001f, transform.localPosition.z);
+                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - 0.1f, transform.localPosition.z);
                 yield return new WaitForSeconds(0f);
             }
             boxOpened = true;
         }
         else
         {
-            for (float i = -0.00767f; i <= -0.00346f; i += 0.001f)
+            for (float i = -0.806f; i <= -0.366f; i += 0.1f)
             {
-                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 0.001f, transform.localPosition.z);
+                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 0.1f, transform.localPosition.z);
                 yield return new WaitForSeconds(0f);
             }
             transform.position = initialposition;
