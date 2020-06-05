@@ -9,7 +9,7 @@ public class FloorTextures : MonoBehaviour
     public Text SelectedOption;
     public Texture DefaultTexture;
     private int t;
-    void Update()
+    public void SelectTexture()
     {
         
 

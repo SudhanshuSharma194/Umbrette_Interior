@@ -16,8 +16,10 @@ public class create : MonoBehaviour
     public Text label;
     public GameObject sofa;
     public GameObject chair;
+    public GameObject Door;
+    public GameObject Table;
 
-    
+
     int l,b,h;
     
 
@@ -49,5 +51,9 @@ public class create : MonoBehaviour
             sofa.SetActive(true);
         else if (label.text == "Chair")
             chair.SetActive(true);
+        else if (label.text == "Door")
+            Door.SetActive(true);
+        else if (label.text == "Table")
+            Table.SetActive(true);
     }
 }
