@@ -1,26 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FloorTextures : MonoBehaviour
 {
     public Texture[] textures;
-    public int currentTexture;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
+    public Text SelectedOption;
+    public Texture DefaultTexture;
+    private int t;
     void Update()
     {
-        if (Input.GetKeyDown("t"))
-        {
-            currentTexture++;
-            currentTexture %= textures.Length;
-            //Renderer.material.mainTexture = textures[currentTexture];
-            GetComponent<Renderer>().material.mainTexture = textures[currentTexture];
-        }
+        
+
+            if (SelectedOption.text == "None")
+            {
+                GetComponent<Renderer>().material.mainTexture = DefaultTexture;
+                return;
+            }
+
+            int.TryParse(SelectedOption.text, out t);
+            t--;
+            GetComponent<Renderer>().material.mainTexture = textures[t];
+        
     }
 }

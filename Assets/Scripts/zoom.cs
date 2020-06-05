@@ -15,16 +15,16 @@ public class zoom : MonoBehaviour
     {
         if (Input.GetAxis ("Mouse ScrollWheel") > 0)
         {
-            //GetComponent<Camera>().fieldOfView--;
-            GetComponent<Transform>().position = new Vector3(transform.position.x, transform.position.y - 0.6f, transform.position.z+0.2f);
-            transform.Rotate(-2, 0, 0);
+            GetComponent<Camera>().fieldOfView--;
+            //GetComponent<Transform>().position = new Vector3(transform.position.x, transform.position.y - 0.6f, transform.position.z+0.2f);
+            //transform.Rotate(-2, 0, 0);
         }
 
         else if (Input.GetAxis ("Mouse ScrollWheel") < 0)
         {
-            //GetComponent<Camera>().fieldOfView++;
-            GetComponent<Transform>().position = new Vector3(transform.position.x, transform.position.y + 0.6f, transform.position.z - 0.2f);
-            transform.Rotate(2, 0, 0);
+            GetComponent<Camera>().fieldOfView++;
+            //GetComponent<Transform>().position = new Vector3(transform.position.x, transform.position.y + 0.6f, transform.position.z - 0.2f);
+            //transform.Rotate(2, 0, 0);
         }
     }
 }

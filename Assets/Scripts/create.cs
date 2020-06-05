@@ -10,15 +10,17 @@ public class create : MonoBehaviour
     public Text length;
     public Text breadth;
     public Text height;
-    public GameObject dd;
+    public GameObject ObjectsDD;
+    public GameObject WallTexturesDD;
+    public GameObject FloorTexturesDD;
     public Text label;
     public GameObject sofa;
     public GameObject chair;
 
-    float rotspeed = 40;
+    
     int l,b,h;
     
-    // Start is called before the first frame update
+
     void Start()
     {
         int.TryParse(length.text, out l );
@@ -27,11 +29,7 @@ public class create : MonoBehaviour
         gameObject.transform.localScale = new Vector3(l, b, h);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     
     public void form()
@@ -39,7 +37,10 @@ public class create : MonoBehaviour
         panel.SetActive(false);
         
         gameObject.SetActive(true);
-        dd.SetActive(true);
+        ObjectsDD.SetActive(true);
+        WallTexturesDD.SetActive(true);
+        FloorTexturesDD.SetActive(true);
+
 
     }
     public void placeobject()

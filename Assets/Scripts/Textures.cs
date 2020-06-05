@@ -1,26 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Textures : MonoBehaviour
 {
     public Texture[] textures;
-    public int currentTexture;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Texture DefaultTexture;
+    public Text selectedoption;
+    private int t;
 
-    // Update is called once per frame
-    void Update()
+    public void SelectTexture()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (selectedoption.text == "None")
         {
-            currentTexture++;
-            currentTexture %= textures.Length;
-            //Renderer.material.mainTexture = textures[currentTexture];
-            GetComponent<Renderer>().material.mainTexture = textures[currentTexture];
-        }
+            GetComponent<Renderer>().material.mainTexture = DefaultTexture;
+            return;
+        }           
+        int.TryParse(selectedoption.text, out t);
+        t--;
+        GetComponent<Renderer>().material.mainTexture = textures[t];
     }
 }
