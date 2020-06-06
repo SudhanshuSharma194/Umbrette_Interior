@@ -1,31 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class dragObject : MonoBehaviour
 {
+    public Toggle toggle;
+    float rotspeed = 50;
     private Vector3 mOffset;
-
-
-
     private float mZCoord;
 
-
-
+    
+     
     void OnMouseDown()
 
     {
-
-        mZCoord = Camera.main.WorldToScreenPoint(
-
-            gameObject.transform.position).z;
-
-
-
-        // Store offset = gameobject world pos - mouse world pos
-
-        mOffset = gameObject.transform.position - GetMouseAsWorldPoint();
-
+       if(toggle.isOn==false)
+        {
+            mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
+            mOffset = gameObject.transform.position - GetMouseAsWorldPoint();
+        }
     }
 
 
@@ -58,7 +52,18 @@ public class dragObject : MonoBehaviour
 
     {
 
-        transform.position = GetMouseAsWorldPoint() + mOffset;
+        if(toggle.isOn)
+        {
+            float rotx = Input.GetAxis("Mouse X") * rotspeed * Mathf.Deg2Rad;
+            float roty = Input.GetAxis("Mouse Y") * rotspeed * Mathf.Deg2Rad;
+
+            transform.Rotate(Vector3.up, -rotx);
+            transform.Rotate(Vector3.right, roty);
+
+        }
+        else
+            transform.position = GetMouseAsWorldPoint() + mOffset;
+
 
     }
 }

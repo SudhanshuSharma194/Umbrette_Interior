@@ -18,6 +18,7 @@ public class create : MonoBehaviour
     public GameObject chair;
     public GameObject Door;
     public GameObject Table;
+    public GameObject toggle;
 
 
     int l,b,h;
@@ -42,6 +43,7 @@ public class create : MonoBehaviour
         ObjectsDD.SetActive(true);
         WallTexturesDD.SetActive(true);
         FloorTexturesDD.SetActive(true);
+        toggle.SetActive(true);
 
 
     }

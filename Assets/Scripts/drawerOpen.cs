@@ -13,6 +13,11 @@ public class drawerOpen : MonoBehaviour
     {
         boxOpened = false;
         coroutineAllowed = true;
+        
+    }
+
+    private void Update()
+    {
         initialposition = transform.position;
     }
 
