@@ -11,8 +11,6 @@ public class create : MonoBehaviour
     public Text breadth;
     public Text height;
     public GameObject ObjectsDD;
-    public GameObject WallTexturesDD;
-    public GameObject FloorTexturesDD;
     public Text label;
     public GameObject sofa;
     public GameObject chair;
@@ -41,8 +39,6 @@ public class create : MonoBehaviour
         
         gameObject.SetActive(true);
         ObjectsDD.SetActive(true);
-        WallTexturesDD.SetActive(true);
-        FloorTexturesDD.SetActive(true);
         toggle.SetActive(true);
 
 
