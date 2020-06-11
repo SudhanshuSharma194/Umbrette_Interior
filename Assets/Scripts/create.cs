@@ -6,10 +6,6 @@ using UnityEngine.UI;
 
 public class create : MonoBehaviour
 {
-    public GameObject panel;
-    public Text length;
-    public Text breadth;
-    public Text height;
     public GameObject ObjectsDD;
     public Text label;
     public GameObject sofa;
@@ -24,25 +20,12 @@ public class create : MonoBehaviour
 
     void Start()
     {
-        int.TryParse(length.text, out l );
-        int.TryParse(breadth.text, out b);
-        int.TryParse(height.text, out h);
+        int.TryParse(Main.length, out l );
+        int.TryParse(Main.breadth, out b);
+        int.TryParse(Main.height, out h);
         gameObject.transform.localScale = new Vector3(l, b, h);
     }
 
-    
-
-    
-    public void form()
-    {
-        panel.SetActive(false);
-        
-        gameObject.SetActive(true);
-        ObjectsDD.SetActive(true);
-        toggle.SetActive(true);
-
-
-    }
     public void placeobject()
     {
         if (label.text == "Sofa")
